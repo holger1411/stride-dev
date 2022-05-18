@@ -1,0 +1,23 @@
+.carousel-indicators.carousel-indicators-dots {
+
+  li {
+    width: 10px;
+    height: 10px;
+    border-radius:99px;
+    margin-right: $carousel-indicator-spacer;
+    margin-left: $carousel-indicator-spacer;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: $carousel-indicator-active-bg;
+    background-clip: padding-box;
+    // Use transparent borders to increase the hit area by 10px on top and bottom.
+    border-top: none;
+    border-bottom: none;
+    opacity: $carousel-indicator-opacity;
+    @include transition($carousel-indicator-transition);
+  }
+
+  .active {
+    opacity: $carousel-indicator-active-opacity;
+  }
+}

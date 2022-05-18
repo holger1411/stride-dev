@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="h-100" lang="{{ metadata.language }}">
+
+  <head>
+    {% include 'snippets/head.njk' %}
+  </head>
+
+  <body>
+
+    {% include 'snippets/navbar.njk' %}
+
+    <main class="container">
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 col-xl-10">
+          <div class="py-vh-5 h-50">
+            <header>
+                  <h1 class="display-1">{{ title }}</h1>
+            </header>
+
+
+            {%- for post in posts %}
+                  {{post.data.content}}
+                {% endfor %}
+
+        </div>
+      </div>
+      </div>
+    </main>
+
+
+    <footer class="container">
+      {% include 'snippets/footer.njk' %}
+    </footer>
+
+  </body>
+
+</html>

@@ -1,0 +1,12 @@
+@import "themes/base/variables-theme"; //Thats your main variable file to set up all the basic design stuff like contrast or accent color, global paddings, font families and more
+
+@import "assets/bootstrap/bootstrap"; // Bootstrap default styles
+
+@import "themes/base/style-theme"; //Thats your main variable file to set up all the basic design stuff like contrast or accent color, global paddings, font families and more
+
+//Additional components or component overwrites
+@import "themes/base/components/buttons";
+@import "themes/base/components/carousel";
+
+@import "themes/base/utilities/opacity";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');

@@ -1,0 +1,26 @@
+<!doctype html>
+<html class="h-100" lang="{{ metadata.language }}">
+
+  <head>
+    {% include 'snippets/head.njk' %}
+  </head>
+
+  <body class="bg-light">
+
+    {% include 'snippets/navbar-fluid.njk' %}
+
+    <div class="container-fluid border-bottom">
+      <div class="row d-flex justify-content-between">
+        <div class="col-md-4 col-lg-3 col-xl-2 border-end pt-5">
+          {% include 'snippets/menu-components.njk' %}
+        </div>
+        <div class="col-md-8 col-lg-9 col-xl-10 pt-5">
+              {{ content | safe }}
+        </div>
+      </div>
+</div>
+      {% include 'snippets/footer.njk' %}
+
+    </body>
+
+  </html>

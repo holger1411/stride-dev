@@ -1,0 +1,182 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.btn,
+.megamenu.show,
+.nav-link.collapsed,
+.scrolled,
+.shadow,
+.shadow-light,
+.preloader,
+a,
+a.link-line,
+a.link-line:before,
+a.hover-hide,
+a.hover-content,
+a.hover-hide::before,
+a.hover-hide .hover-content,
+img {
+  transition: all 0.5s ease-in-out 0s;
+}
+
+.py-vh-2 {
+  padding-top:1.5vh;
+  padding-bottom:1.5vh;
+}
+
+.py-vh-2 {
+  padding-top:3vh;
+  padding-bottom:3vh;
+}
+
+.py-vh-3 {
+  padding-top:6vh;
+  padding-bottom:6vh;
+}
+
+.py-vh-4 {
+  padding-top:9vh;
+  padding-bottom:9vh;
+}
+
+.py-vh-5 {
+  padding-top:12vh;
+  padding-bottom:12vh;
+}
+
+.transform-scale:hover {
+  transform: scale(1.5,1.5);
+}
+
+.o-50--hover:hover{
+  opacity:.5;
+}
+
+.vh-10 {
+  height:10vh;
+}
+
+.vh-20 {
+  height:20vh;
+}
+
+.vh-25 {
+  height:25vh;
+}
+
+.vh-33 {
+  height:33vh;
+}
+
+.vh-50 {
+  height:50vh;
+}
+
+.vh-66 {
+  height:66vh;
+}
+
+.vh-75 {
+  height:75vh;
+}
+
+.vh-100 {
+  height:100vh;
+}
+
+.btn-xl {
+  @include button-size($btn-padding-y-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-border-radius-xl);
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bp-center {
+  background-position: center center;
+}
+.bg-gray-100 {
+  background-color: $gray-100;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+
+.bg-gray-400 {
+  background-color: $gray-400;
+}
+.bg-gray-500 {
+  background-color: $gray-500;
+}
+.bg-gray-600 {
+  background-color: $gray-600;
+}
+.bg-gray-700 {
+  background-color: $gray-700;
+}
+.bg-gray-800 {
+  background-color: $gray-800;
+}
+.bg-gray-900 {
+  background-color: $gray-900;
+}
+.bg-black {
+  background-color:$black;
+}
+
+.bg-primary-soft {
+  background-color: $primary-soft;
+}
+
+.bg-secondary-soft {
+  background-color: $secondary-soft;
+}
+
+.bg-success-soft {
+  background-color: $success-soft;
+}
+
+.bg-warning-soft {
+  background-color: $warning-soft;
+}
+
+.bg-danger-soft {
+  background-color: $danger-soft;
+}
+.bg-light-soft {
+  background-color: $light-soft;
+}
+
+.bg-dark-soft {
+  background-color: $dark-soft;
+}
+
+.o-25 {
+  opacity:.25;
+}
+
+.o-33 {
+  opacity:.33;
+}
+
+.o-50 {
+  opacity:.5;
+}
+
+.o-66 {
+  opacity:.66;
+}
+
+.o-75 {
+  opacity:.75;
+}
+
+.o-100 {
+  opacity:1;
+}
