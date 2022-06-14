@@ -336,7 +336,7 @@ module.exports = function(eleventyConfig) {
   }
 
   eleventyConfig.addFilter("filterTagList", filterTagList)
-
+  eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addCollection("tagList", collection => {
     const tagsObject = {}
     collection.getAll().forEach(item => {
