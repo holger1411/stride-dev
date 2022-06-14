@@ -14,3 +14,7 @@
 
   # Default build command.
   command = "npm run build"
+
+  # Versions
+  NODE_VERSION = "16.9.0"
+  NPM_VERSION = "7.11.1"
