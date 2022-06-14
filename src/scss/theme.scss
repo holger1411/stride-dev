@@ -1,12 +1,37 @@
-@import "themes/base/variables-theme"; //Thats your main variable file to set up all the basic design stuff like contrast or accent color, global paddings, font families and more
+//Thats your main variable file to set up all the basic design stuff like contrast or accent color, global paddings, font families and more
+@import "themes/base/variables-theme";
 
-@import "assets/bootstrap/bootstrap"; // Bootstrap default styles
+// Bootstrap default styles
+@import "assets/bootstrap/bootstrap";
 
-@import "themes/base/style-theme"; //Thats your main variable file to set up all the basic design stuff like contrast or accent color, global paddings, font families and more
+//Thats your main variable file to set up all the basic design stuff like contrast or accent color, global paddings, font families and more
+@import "themes/base/style-theme";
 
 //Additional components or component overwrites
 @import "themes/base/components/buttons";
 @import "themes/base/components/carousel";
 
+//Additional utlities or utility overwrites
+@import "themes/base/utilities/bg-colors";
+@import "themes/base/utilities/bg-soft";
 @import "themes/base/utilities/opacity";
+@import "themes/base/utilities/p-vh";
+@import "themes/base/utilities/vh";
+
+// More 3rd party stuff
+@import "assets/aos/aos";
+
+// External Font
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+
+@include media-breakpoint-up(xl) {
+  .scrollx {
+  transform: translateX(calc(max(1140px, 100vw)/2 - 570px));
+}
+}
+
+@include media-breakpoint-up(xxl) {
+  .scrollx {
+  transform: translateX(calc(max(1320px, 100vw)/2 - 660px));
+}
+}

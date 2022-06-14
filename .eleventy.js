@@ -2,14 +2,19 @@ const { DateTime } = require("luxon");
 const navigationPlugin = require('@11ty/eleventy-navigation');
 const rssPlugin = require('@11ty/eleventy-plugin-rss');
 const Image = require("@11ty/eleventy-img");
-const Cache = require("@11ty/eleventy-cache-assets");
+const EleventyFetch = require("@11ty/eleventy-fetch");
 
 (async () => {
   let url = "https://images.unsplash.com/photo-1557898979-252a87810b77";
   let stats = await Image(url, {
     widths: [512, 768],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -19,27 +24,28 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [512, 768],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
 
-(async () => {
-  let url = "https://images.unsplash.com/photo-1558095625-f882e3436125";
-  let stats = await Image(url, {
-    widths: [512, 768, 1280],
-    formats: ["jpeg"],
-    outputDir: "./dev/img"
-  });
-  console.log( stats );
-})();
 
 (async () => {
   let url = "https://images.unsplash.com/photo-1604328703693-18313fe20f3a";
   let stats = await Image(url, {
     widths: [512],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -49,7 +55,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [512],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -59,7 +70,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [512,1280],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -69,7 +85,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [512],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -79,7 +100,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [512],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -89,7 +115,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1680],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -99,7 +130,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1920],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -109,7 +145,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [640],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -119,7 +160,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [640],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -129,7 +175,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [640],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -139,7 +190,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [500],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -149,7 +205,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [500],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -159,7 +220,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [500, 1920],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -169,7 +235,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [768],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -179,7 +250,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1024],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -189,7 +265,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1024],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -199,7 +280,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1024],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -209,7 +295,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1024],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();
@@ -219,7 +310,12 @@ const Cache = require("@11ty/eleventy-cache-assets");
   let stats = await Image(url, {
     widths: [1024],
     formats: ["jpeg"],
-    outputDir: "./dev/img"
+    outputDir: "./dev/img",
+    cacheOptions: {
+      duration: "1d",
+      directory: ".cache",
+      removeUrlQueryParams: false,
+    }
   });
   console.log( stats );
 })();

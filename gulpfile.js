@@ -6,7 +6,6 @@ var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
 const purgecss = require('gulp-purgecss');
-const image = require('gulp-image');
 const htmlmin = require('gulp-htmlmin');
 var htmlreplace = require('gulp-html-replace');
 var reload      = browserSync.reload;
@@ -58,12 +57,6 @@ gulp.task('purgecss', () => {
         }))
         .pipe(gulp.dest('public/css'))
 })
-
-gulp.task('minify-img', () => {
-  return gulp.src('./dev/img/*')
-    .pipe(image())
-    .pipe(gulp.dest('./public/img/'));
-});
 
 gulp.task('clean-dist', function() {
   return gulp.src('dist', {
@@ -126,6 +119,16 @@ gulp.task( 'copy-assets', function( done ) {
 	gulp
 		.src( paths.node + '/bootstrap/scss/**/*.scss' )
 		.pipe( gulp.dest( paths.dev + '/scss/assets/bootstrap' ) );
+
+    // Copy all Animate on Scroll css files
+  	gulp
+  		.src( paths.node + '/aos/dist/**/*.css' )
+  		.pipe( gulp.dest( paths.dev + '/scss/assets/aos' ) );
+
+      // Copy all Animate on Scroll css files
+    	gulp
+    		.src( paths.node + '/aos/dist/**/*.js' )
+    		.pipe( gulp.dest( paths.dev + '/js' ) );
 
 	////////////////// End Bootstrap 4 Assets /////////////////////////
 
