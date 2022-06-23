@@ -23,3 +23,15 @@ img {
 .transform-scale:hover {
   transform: scale(1.5,1.5);
 }
+
+.display-huge {
+  font-size: calc( 5rem + 3vw );
+}
+
+
+.intro-content::first-letter {
+    float: left;
+    font-size: 4.5em;
+    padding: .15em .25em 0 0;
+    line-height: 4.5rem;
+}
