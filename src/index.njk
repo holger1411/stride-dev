@@ -4,53 +4,81 @@ eleventyExcludeFromCollections: true
 layout: layouts/default.njk
 navbar: navbar1
 footer: footer2
-colorModifier: primary
+colorModifier: dark
 ---
-    <div class="container py-vh-5">
-      <div class="row d-flex align-items-center">
-        {% include "code/hero2.njk" %}
-      </div>
-    </div>
+<div class="w-100 py-vh-4 overflow-hidden">
+  {% include "code/hero10.njk" %}
+</div>
 
-    <div class="py-vh-3 bg-light">
-      <div class="container">
-        <div class="row">
-          {% include "code/feature1.njk" %}
-        </div>
-      </div>
+<div class="py-vh-2 border-bottom bg-light">
+  <div class="container opacity-75">
+    <div class="row d-flex justify-content-center align-items-center">
+      {% include "code/trust1.njk" %}
     </div>
+  </div>
+</div>
 
-    <div class="py-vh-5">
-      <div class="container">
-        <div class="row  d-flex align-items-center">
-          {% include "code/feature4.njk" %}
-        </div>
-      </div>
+<div class="bg-light py-vh-3">
+  <div class="container">
+    <div class="row">
+      {% include "code/feature1.njk" %}
     </div>
+  </div>
+</div>
 
-    <div class="position-relative overflow-hidden bg-light">
-          {% include "code/gallery3.njk" %}
+<div class="py-vh-5">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      {% include "code/feature4.njk" %}
     </div>
+  </div>
+</div>
 
-    <div class="small py-vh-3">
-    <div class="container">
+<div class="position-relative overflow-hidden bg-light border-bottom">
+  {% include "code/gallery3.njk" %}
+</div>
+
+<div class="container py-vh-4">
+  <div class="row d-flex justify-content-center">
+    {% include "code/trust3.njk" %}
+  </div>
+</div>
+
+<div class="py-vh-4 bg-{{colorModifier}} text-white">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      {% include "code/cta1.njk" %}
+    </div>
+  </div>
+</div>
+
+<div class="bg-light">
+  <div class="container py-vh-6">
+    <div class="row d-flex justify-content-center">
+      {% include "code/trust4.njk" %}
+    </div>
+  </div>
+</div>
+
+<div class="small py-vh-3">
+  <div class="container">
+    <div class="row">
+      {% include "code/feature5.njk" %}
+    </div>
+  </div>
+</div>
+
+<div class="container py-vh-3 border-top" data-aos="fade" data-aos-delay="200">
+  <div class="row d-flex justify-content-center">
+    <div class="col-12 col-lg-8 text-center">
+      <h3 class="fs-2 fw-light">Stay in touch with our<span class="fw-bold">
+          monthly and free</span>
+        newsletter!</h2>
+    </div>
+    <div class="col-12 col-lg-8 text-center">
       <div class="row">
-        {% include "code/feature5.njk" %}
+        {% include "code/newsletterform2.njk" %}
       </div>
     </div>
-    </div>
-
-    <div class="container py-vh-3 border-top" data-aos="fade" data-aos-delay="200">
-      <div class="row d-flex justify-content-center">
-        <div class="col-12 col-lg-8 text-center">
-          <h3 class="fs-2 fw-light">Stay in touch with our<span class="fw-bold">
-              monthly and free</span>
-            newsletter!</h2>
-        </div>
-        <div class="col-12 col-lg-8 text-center">
-          <div class="row">
-            {% include "code/newsletterform1.njk" %}
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>

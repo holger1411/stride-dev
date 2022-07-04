@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+body {
+  margin-top:108px;
+}
 
 .btn,
 .megamenu.show,
@@ -9,6 +12,7 @@ html {
 .shadow,
 .shadow-light,
 .preloader,
+.navbar,
 a,
 a.link-line,
 a.link-line:before,
@@ -34,4 +38,18 @@ img {
     font-size: 4.5em;
     padding: .15em .25em 0 0;
     line-height: 4.5rem;
+}
+
+.bg-cover {
+  background-size:cover;
+  background-position:center center
+}
+.navbar {
+  padding-top:32px;
+  padding-bottom:32px;
+}
+.navbar.scrolled {
+  border-bottom:1px solid $gray-300;
+  padding-top:12px;
+  padding-bottom:12px;
 }

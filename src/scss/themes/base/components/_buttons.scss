@@ -1,5 +1,6 @@
 .btn-xl {
   @include button-size($btn-padding-y-xl, $btn-padding-x-xl, $btn-font-size-xl, $btn-border-radius-xl);
+  font-size:1rem;
 }
 
 .btn-soft-primary {

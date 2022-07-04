@@ -67,7 +67,7 @@ $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
-$dark:          $gray-900 !default;
+$dark:          $gray-800;
 $accent:        $indigo;
 
 // scss-docs-start theme-colors-map
@@ -90,7 +90,7 @@ $font-weight-light:           300 !default;
 $font-weight-normal:          300 !default;
 $lead-font-size:              $font-size-base * 1.33;
 $grid-gutter-width:           3vw;
-$border-radius: 3px;
+$border-radius: 0px;
 
 // Shadows
 $box-shadow:                  0 3rem 4rem rgba($black, .25);
@@ -109,8 +109,8 @@ $light-soft: rgba($light, .2);
 $dark-soft: rgba($dark, .2);
 
 //XL Buttons
-$btn-padding-y-xl:            calc(1rem + .2vh);
-$btn-padding-x-xl:            calc(1rem + 1.2vw);
+$btn-padding-y-xl:            calc(1rem + .3vh);
+$btn-padding-x-xl:            calc(1rem + 1.4vw);
 $btn-font-size-xl:            ($font-size-base*1.2);
 $btn-border-radius-xl:        $border-radius;
 
@@ -118,3 +118,5 @@ $btn-border-radius-xl:        $border-radius;
 $navbar-light-color:                rgba($black, .7) !default;
 $navbar-light-hover-color:          rgba($black, .8) !default;
 $navbar-light-active-color:         rgba($black, .9) !default;
+
+$enable-negative-margins: true
