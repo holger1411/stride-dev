@@ -1,7 +1,7 @@
 html {
   scroll-behavior: smooth;
 }
-body {
+body.fixednav {
   margin-top:108px;
 }
 
@@ -52,4 +52,38 @@ img {
   border-bottom:1px solid $gray-300;
   padding-top:12px;
   padding-bottom:12px;
+  background-color: rgba(255,255,255,.9);
+}
+
+.display-big {font-size:7rem;}
+
+.link-fancy {
+  color: $primary;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+}
+
+.link-fancy:hover {
+  color: $gray-600;
+}
+
+.link-fancy:before {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100%;
+  transform-origin: left;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, $primary 0, $primary 25%, transparent 0, transparent 50%, $primary 0, $primary 75%, transparent 0, transparent);
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: 400% 1px;
+  transition: background-position 0.8s ease-in-out;
+}
+
+.link-fancy:hover:before {
+  background-position: 100%;
 }

@@ -6,30 +6,34 @@ navbar: navbar1
 footer: footer2
 colorModifier: dark
 ---
-<div class="w-100 py-vh-4 overflow-hidden">
+<div class="w-100 overflow-hidden bg-gray-100">
   {% include "code/hero10.njk" %}
 </div>
-
-<div class="py-vh-2 border-bottom bg-light">
+<!--
+<div class="py-vh-2">
   <div class="container opacity-75">
     <div class="row d-flex justify-content-center align-items-center">
       {% include "code/trust1.njk" %}
     </div>
   </div>
 </div>
-
-<div class="bg-light py-vh-3">
+-->
+<div class="py-vh-5">
   <div class="container">
-    <div class="row">
       {% include "code/feature1.njk" %}
-    </div>
+  </div>
+</div>
+
+<div class="py-vh-4 bg-gray-100">
+  <div class="container">
+      {% include "code/gallery1.njk" %}
   </div>
 </div>
 
 <div class="py-vh-5">
   <div class="container">
-    <div class="row d-flex align-items-center">
-      {% include "code/feature4.njk" %}
+    <div class="row">
+      {% include "code/feature7.njk" %}
     </div>
   </div>
 </div>
@@ -39,12 +43,12 @@ colorModifier: dark
 </div>
 
 <div class="container py-vh-4">
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center align-items-center">
     {% include "code/trust3.njk" %}
   </div>
 </div>
 
-<div class="py-vh-4 bg-{{colorModifier}} text-white">
+<div class="py-vh-6 bg-gray-900 text-light">
   <div class="container">
     <div class="row d-flex justify-content-center">
       {% include "code/cta1.njk" %}
