@@ -5,6 +5,7 @@ var sass = require('gulp-dart-sass');
 var clean = require('gulp-clean');
 var browserSync = require('browser-sync').create();
 var rename = require('gulp-rename');
+var imgopt = require('gulp-smushit');
 const purgecss = require('gulp-purgecss');
 const htmlmin = require('gulp-htmlmin');
 var htmlreplace = require('gulp-html-replace');
@@ -107,6 +108,11 @@ gulp.task('inject-min-css', function(done) {
          done();
 });
 
+gulp.task('imgopt', function () {
+    return gulp.src('src/img/*.{jpg,png}')
+        .pipe(imgopt())
+        .pipe(gulp.dest('public/img'));
+});
 ////////////////// All Bootstrap SASS  Assets /////////////////////////
 gulp.task( 'copy-assets', function( done ) {
 	////////////////// All Bootstrap 4 Assets /////////////////////////
