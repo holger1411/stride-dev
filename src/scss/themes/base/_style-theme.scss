@@ -6,6 +6,7 @@ body.fixednav {
 }
 
 .btn,
+.navbar-collapse.collapsing,
 .megamenu.show,
 .nav-link.collapsed,
 .scrolled,
@@ -20,6 +21,7 @@ a.hover-hide,
 a.hover-content,
 a.hover-hide::before,
 a.hover-hide .hover-content,
+.navbar-collapse.collapse.show,
 img {
   transition: all 0.5s ease-in-out 0s;
 }
@@ -85,4 +87,9 @@ img {
 
 .link-fancy:hover:before {
   background-position: 100%;
+}
+
+.navbar-collapse.collapsing, .navbar-collapse.collapse.show {
+  background-color:$white;
+  padding:10px;
 }
