@@ -4,7 +4,7 @@
 
 ## What is Stride?
 Stride is a static HTML website template. Open sources and free to use. 
-It utilizes Bootstrap 5 and the the static site generator Eleventy.
+It utilizes <a href="https://getbootstrap.com/" target="_blank">Bootstrap 5</a> and the the static site generator <a href="https://www.11ty.dev/" target="_blank">Eleventy</a> .
 
 ## How to use it as beginner
 If you are familia with basic HTML but if you are not a web developer with advanced skills you can use Stride es well. Just use the /public folder of this repository. Change the content, add some of your images and transfer it to your webserver/webspace. Thats it
