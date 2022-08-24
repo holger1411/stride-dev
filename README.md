@@ -48,4 +48,4 @@ If you are done with your dev work and happy with it its time to deploy your sta
 ```
 npm run build
 ```
-That will output the full site, with purged and minified CSS and minified html. The output will be stored in the `/public` folder.
+That will output the full site, with purged and minified CSS and minified html. The output will be stored in the `/public` folder. That folder is what you want to deploy to your webserver / hosting provider.
