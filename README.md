@@ -16,7 +16,7 @@ Eleventy also allows differend data types and ways to incorporate content during
 Basically Stride is a all in on boilerplate for static websites + an example of design and layout.
 
 ## Requirements
-You need Node (at least v8+) on your computer. To check if you have node and what version run this command in your terminal:
+You need Node (at least v14+) on your computer. To check if you have node and what version run this command in your terminal:
 ```
 node --version
 ```
