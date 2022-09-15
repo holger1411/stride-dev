@@ -5,15 +5,16 @@ footer: footer2
 colorModifier: dark
 permalink: 404.html
 bodyModifier: d-flex h-100 w-100
+headline: 404
 ---
-<div class="container-fluid h-100">
-<div class="row h-100">
-    <div class="d-flex h-100 p-3 flex-column mx-vw-5">
-      <header class="mb-auto">
-        <h2 class="h5 py-vh-2">404</h2>
+<div class="h-100 container-fluid">
+  <div class="h-100 row d-flex align-items-stretch">
+    <div class="col-12 col-md-7 col-lg-6 d-flex align-items-start flex-column px-vw-5">
+      <header class="mb-auto col-12">
+        <h2 class="h5 py-vh-2">{{headline}}</h2>
       </header>
-      <main class="mb-auto">
-        <h1 class="display-1 fw-bold">Uuuups, something is missing...</h1>
+      <main class="mb-auto col-12">
+        <h1 class="display-1 fw-bold">Uuuups, something is broken...</h1>
         <p class="lead">The page you are looking for doesn't exist or has been moved.</p>
         <a href="index.html" class="link-fancy">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
@@ -22,5 +23,5 @@ bodyModifier: d-flex h-100 w-100
         Go back to frontpage</a>
       </main>
     </div>
-</div>
+    <div class="col-12 col-md-5 col-lg-6 bg-cover" style="background-image: url({{'/img/webp/404.webp'|url}});"></div>
 </div>

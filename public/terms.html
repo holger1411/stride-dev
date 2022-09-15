@@ -5,6 +5,9 @@
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
   <meta name="description" content="A growing collection of ready to use components for the CSS framework Bootstrap 5">
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
   <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon.png">
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
@@ -14,16 +17,6 @@
 
    <style>
 
-/* inter-200 - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 200;
-  font-display: swap;
-  src: local(''),
-       url('../fonts/inter-v11-latin-200.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/inter-v11-latin-200.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
 /* inter-300 - latin */
 @font-face {
   font-family: 'Inter';
@@ -31,28 +24,27 @@
   font-weight: 300;
   font-display: swap;
   src: local(''),
-       url('../fonts/inter-v11-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/inter-v11-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/inter-v12-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v12-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
-/* inter-regular - latin */
-@font-face {
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local(''),
-       url('../fonts/inter-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/inter-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-}
-/* inter-500 - latin */
+
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: local(''),
-       url('../fonts/inter-v11-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-       url('../fonts/inter-v11-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+       url('../fonts/inter-v12-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v12-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local(''),
+       url('../fonts/inter-v12-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/inter-v12-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 
 </style>
@@ -108,12 +100,12 @@
 
     </ul>
       <a href="https://templatedeck.com" data-splitbee-event="Click Download" aria-label="Download this template" class="link-dark pb-1 link-fancy me-2">
-        Download this Template
+        Download this Template       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download ms-1" viewBox="0 0 16 16">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+              </svg>
       </a>
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
-        <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-        <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-      </svg>
+
     </div>
 </div>
 </nav>
@@ -300,20 +292,17 @@
   </ul>
 </div>
 <div class="col-12 col-lg-6 col-xl-3 p-5">
-  <h3 class="h6 mb-3">Support</h3>
+  <h3 class="h6 mb-3">Subpages</h3>
   <ul class="nav flex-column">
     <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" aria-current="page" href="#">Contact</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">FAQ</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link link-secondary ps-0" href="#">Support Center</a>
+      <a class="nav-link link-secondary ps-0" aria-current="page" href="/404.html">404 Page</a>
     </li>
   </ul>
 </div>
 </div>
+</div>
+
+<div class="container text-center py-3 small">Made by <a href="https://templatedeck.com" class="link-fancy" target="_blank">templatedeck.com</a>
 </div>
 </footer>
 

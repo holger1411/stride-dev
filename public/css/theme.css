@@ -9137,6 +9137,10 @@ img {
 .transform-scale:hover {
   transform: scale(1.5, 1.5); }
 
+.px-vw-5 {
+  padding-left: 8vw;
+  padding-right: 8vw; }
+
 .vh-10 {
   height: 10vh; }
 

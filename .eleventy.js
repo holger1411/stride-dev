@@ -5,11 +5,11 @@ const Image = require("@11ty/eleventy-img");
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 (async () => {
-  let url = "https://images.unsplash.com/photo-1557898979-252a87810b77";
+  let url = "https://images.unsplash.com/photo-1543393716-375f47996a77";
   let stats = await Image(url, {
-    widths: [512, 768],
+    widths: [1980],
     formats: ["jpeg"],
-    outputDir: "./dev/img",
+    outputDir: "./src/img",
     cacheOptions: {
       duration: "1d",
       directory: ".cache",
