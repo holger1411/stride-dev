@@ -93,3 +93,9 @@ img {
   background-color:$white;
   padding:10px;
 }
+
+.blockquote-xl {
+  font-size: calc(1em + 1vw);
+  font-style: italic;
+  font-weight:bolder;
+}

@@ -12,7 +12,7 @@
   <meta name="author" content="Holger Koenemann">
   <meta name="generator" content="Eleventy v2.0.0">
   <meta name="HandheldFriendly" content="true">
-  <title>404</title>
+  <title>Register a new account</title>
   <link rel="stylesheet" href="css/theme.min.css">
 
    <style>
@@ -56,8 +56,8 @@
     <div class="h-100 container-fluid">
       <div class="h-100 row d-flex align-items-stretch">
         
-            <div class="col-12 d-flex align-items-start flex-column px-vw-5">
-            
+          <div class="col-12 col-md-7 col-lg-6 d-flex align-items-start flex-column px-vw-5">
+          
             <header class="mb-auto py-vh-2 col-12">
               <a class="navbar-brand pe-4 fs-4" href="/">
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-layers-half" viewbox="0 0 16 16">
@@ -68,18 +68,32 @@
 
             </header>
             <main class="mb-auto col-12">
-              <h1>404</h1>
+              <h1>Register a new account</h1>
               
-        <h1 class="display-1 fw-bold">Uuuups, something is broken...</h1>
-        <p class="lead">The page you are looking for doesn't exist or has been moved.</p>
-        <a href="index.html" class="link-fancy">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
-          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
-        </svg>
-        Go back to frontpage</a>
+<form class="row">
+  <div class="col-12 col-lg-10 col-xl-8">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control form-control-lg" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check py-3">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">If you really don´t want any newsletter <strong>check this box</strong>. Then you just agree to receive our marketing mails and product stuff. If you check this box <strong>we will not send out our newsletter</strong> to you at all...on mondays.</label>
+  </div>
+  <p class="small text-muted">By creating an account you agree to our well hidden terms of service. They are here...somewhere...for legal reasons...but you would not find ´em!</p>
+  <button type="submit" class="btn btn-primary btn-xl">Submit</button>
+</div>
+</form>
 
             </main>
           </div>
+          
+            <div class="col-12 col-md-5 col-lg-6 bg-cover" style="background-image: url('./img/webp/colorful.webp');"></div>
           
         </div>
 

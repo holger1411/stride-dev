@@ -5,7 +5,7 @@ const Image = require("@11ty/eleventy-img");
 const EleventyFetch = require("@11ty/eleventy-fetch");
 
 (async () => {
-  let url = "https://images.unsplash.com/photo-1543393716-375f47996a77";
+  let url = "https://images.unsplash.com/photo-1535882686-b1332af6f51e";
   let stats = await Image(url, {
     widths: [1980],
     formats: ["jpeg"],
@@ -20,6 +20,11 @@ const EleventyFetch = require("@11ty/eleventy-fetch");
 })();
 
 module.exports = function(eleventyConfig) {
+  // Universal Shortcodes (Adds to Liquid, Nunjucks, Handlebars)
+  eleventyConfig.addShortcode("bgImg", function(imgName, test) {
+    return `  style="background-image: url('./img/webp/${imgName}.webp');"`;
+  });
+
   // blogposts collection
     eleventyConfig.addCollection("components", function (collection) {
       return collection.getFilteredByGlob("./src/components/*.njk").reverse();

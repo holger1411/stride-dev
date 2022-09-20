@@ -8945,6 +8945,11 @@ img {
   background-color: #fff;
   padding: 10px; }
 
+.blockquote-xl {
+  font-size: calc(1em + 1vw);
+  font-style: italic;
+  font-weight: bolder; }
+
 .btn-xl {
   --bs-btn-padding-y: calc(1rem + .3vh);
   --bs-btn-padding-x: calc(1rem + 1.4vw);
