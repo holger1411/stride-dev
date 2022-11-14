@@ -54,7 +54,7 @@ gulp.task('purgecss', () => {
     return gulp.src('public/css/theme.min.css')
         .pipe(purgecss({
             content: ['public/**/*.html'],
-            safelist: ['collapsed', 'collapse', 'active', 'show', 'collapsing' ]
+            safelist: ['collapsed', 'collapse', 'active', 'show', 'showing', 'collapsing', 'modal-open', 'modal-backdrop', 'offcanvas-backdrop', 'fade', 'start' ]
         }))
         .pipe(gulp.dest('public/css'))
 })
