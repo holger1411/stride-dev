@@ -1,111 +1,131 @@
-var gulp = require('gulp');
-var plumber = require('gulp-plumber');
-var cleanCSS = require('gulp-clean-css');
-var sass = require('gulp-dart-sass');
-var clean = require('gulp-clean');
-var browserSync = require('browser-sync').create();
-var rename = require('gulp-rename');
-var imgopt = require('gulp-smushit');
-const purgecss = require('gulp-purgecss');
-const htmlmin = require('gulp-htmlmin');
-var htmlreplace = require('gulp-html-replace');
-var reload      = browserSync.reload;
-// Configuration file to keep your code DRY
-var cfg = require( './gulpconfig.json' );
-var paths = cfg.paths;
+import gulp from 'gulp';
+import plumber from 'gulp-plumber';
+import cleanCSS from 'gulp-clean-css';
+import dartSass from 'gulp-dart-sass';
+import clean from 'gulp-clean';
+import browserSync from 'browser-sync';
+import rename from 'gulp-rename';
+import imgopt from 'gulp-smushit';
+import purgecss from 'gulp-purgecss';
+import htmlmin from 'gulp-htmlmin';
+import htmlreplace from 'gulp-html-replace';
+import { createRequire } from 'module';
 
-sass.compiler = require('node-sass');
+const require = createRequire(import.meta.url);
+const cfg = require('./gulpconfig.json');
+const paths = cfg.paths;
+
+const bs = browserSync.create();
 
 gulp.task('dist-assets', function (done) {
     gulp.src('./src/js/**.*')
         .pipe(gulp.dest('./dev/js'));
     gulp.src('./src/img/**/**.*')
         .pipe(gulp.dest('./dev/img'));
-      done();
+    done();
 });
 
 gulp.task('prod-copy', function (done) {
     gulp.src('./dev/**/**.*')
-    .pipe(gulp.dest('./public/'));
+        .pipe(gulp.dest('./public/'));
     done();
 });
 
 gulp.task('minify-css', () => {
-  return gulp
-    .src('dev/css/*.css')
-    .pipe(cleanCSS({
-      compatibility: 'ie8'
-    }))
-    .pipe( rename( { suffix: '.min' } ) )
-    .pipe(gulp.dest('dev/css'))
-    .pipe(browserSync.stream());
+    return gulp
+        .src('dev/css/*.css')
+        .pipe(cleanCSS({
+            compatibility: 'ie8'
+        }))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(gulp.dest('dev/css'))
+        .pipe(bs.stream());
 });
 
 // minifies HTML
 gulp.task('minify-html', () => {
-  return gulp.src('public/*.html')
-    .pipe(htmlmin({ collapseWhitespace: false, removeComments: true }))
-    .pipe(gulp.dest('public'));
+    return gulp.src('public/*.html')
+        .pipe(htmlmin({ collapseWhitespace: false, removeComments: true }))
+        .pipe(gulp.dest('public'));
 });
-
 
 // Purging unused CSS
 gulp.task('purgecss', () => {
     return gulp.src('public/css/theme.min.css')
         .pipe(purgecss({
             content: ['public/**/*.html'],
-            safelist: ['collapsed', 'collapse', 'active', 'show', 'showing', 'collapsing', 'modal-open', 'modal-backdrop', 'offcanvas-backdrop', 'fade', 'start' ]
+            safelist: [
+                'collapsed', 'collapse', 'active', 'show', 'showing',
+                'collapsing', 'modal-open', 'modal-backdrop',
+                'offcanvas-backdrop', 'fade', 'start',
+                // Bootstrap 5.3 additions
+                'text-body-secondary', 'text-body-tertiary', 'text-body-emphasis',
+                'link-body-emphasis', 'link-underline', 'link-underline-opacity-0',
+                'focus-ring', 'icon-link',
+                // Data attributes for color modes
+                /\[data-bs-theme.*\]/
+            ]
         }))
-        .pipe(gulp.dest('public/css'))
-})
-
-gulp.task('clean-dist', function() {
-  return gulp.src('dist', {
-      read: false
-    })
-    .on('error', function(err) {
-      console.log(err.toString());
-
-      this.emit('end');
-    })
-    .pipe(clean());
+        .pipe(gulp.dest('public/css'));
 });
 
-gulp.task('clean', function() {
-  return gulp.src('dev/scss', {
-      read: false
+gulp.task('clean-dist', function () {
+    return gulp.src('dist', {
+        read: false,
+        allowEmpty: true
     })
-    .on('error', function(err) {
-      console.log(err.toString());
-
-      this.emit('end');
-    })
-    .pipe(clean());
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
+        .pipe(clean());
 });
 
-gulp.task('browser-sync', function(done) {
-    browserSync.init({
+gulp.task('clean', function () {
+    return gulp.src('dev/scss', {
+        read: false,
+        allowEmpty: true
+    })
+        .on('error', function (err) {
+            console.log(err.toString());
+            this.emit('end');
+        })
+        .pipe(clean());
+});
+
+gulp.task('browser-sync', function (done) {
+    bs.init({
         server: {
             baseDir: "./dev"
         }
     });
-gulp.watch("dev/**/*.*").on('change', browserSync.reload);
+    gulp.watch("dev/**/*.*").on('change', bs.reload);
+    done();
 });
 
 // Compile sass to css
 gulp.task('sass', function () {
-  return gulp.src('src/scss/theme.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dev/css'))
+    return gulp.src('src/scss/theme.scss')
+        .pipe(dartSass().on('error', dartSass.logError))
+        .pipe(gulp.dest('dev/css'));
 });
 
-gulp.task('inject-min-css', function(done) {
-  gulp.src('./public/**/*.html')
-    .pipe(htmlreplace({
-        'css': 'css/theme.min.css'
-    }))
-    .pipe(gulp.dest('./public'));
-         done();
+gulp.task('inject-min-css', function (done) {
+    gulp.src('./public/**/*.html')
+        .pipe(htmlreplace({
+            'css': 'css/theme.min.css'
+        }))
+        .pipe(gulp.dest('./public'));
+    done();
+});
+
+gulp.task('inject-css', function (done) {
+    gulp.src('./dev/**/*.html')
+        .pipe(htmlreplace({
+            'css': 'css/theme.css'
+        }))
+        .pipe(gulp.dest('./dev'));
+    done();
 });
 
 gulp.task('imgopt', function () {
@@ -113,30 +133,24 @@ gulp.task('imgopt', function () {
         .pipe(imgopt())
         .pipe(gulp.dest('public/img'));
 });
-////////////////// All Bootstrap SASS  Assets /////////////////////////
-gulp.task( 'copy-assets', function( done ) {
-	////////////////// All Bootstrap 4 Assets /////////////////////////
-	// Copy all JS files
-	var stream = gulp
-		.src( paths.node + '/bootstrap/dist/js/**/*.*' )
-		.pipe( gulp.dest( paths.dev + '/js' ) );
 
-	// Copy all Bootstrap SCSS files
-	gulp
-		.src( paths.node + '/bootstrap/scss/**/*.scss' )
-		.pipe( gulp.dest( paths.dev + '/scss/assets/bootstrap' ) );
+////////////////// All Bootstrap SASS Assets /////////////////////////
+gulp.task('copy-assets', function (done) {
+    // Copy all Bootstrap JS files
+    gulp.src(paths.node + '/bootstrap/dist/js/**/*.*')
+        .pipe(gulp.dest(paths.dev + '/js'));
+
+    // Copy all Bootstrap SCSS files
+    gulp.src(paths.node + '/bootstrap/scss/**/*.scss')
+        .pipe(gulp.dest(paths.dev + '/scss/assets/bootstrap'));
 
     // Copy all Animate on Scroll css files
-  	gulp
-  		.src( paths.node + '/aos/dist/**/*.css' )
-  		.pipe( gulp.dest( paths.dev + '/scss/assets/aos' ) );
+    gulp.src(paths.node + '/aos/dist/**/*.css')
+        .pipe(gulp.dest(paths.dev + '/scss/assets/aos'));
 
-      // Copy all Animate on Scroll css files
-    	gulp
-    		.src( paths.node + '/aos/dist/**/*.js' )
-    		.pipe( gulp.dest( paths.dev + '/js' ) );
+    // Copy all Animate on Scroll js files
+    gulp.src(paths.node + '/aos/dist/**/*.js')
+        .pipe(gulp.dest(paths.dev + '/js'));
 
-	////////////////// End Bootstrap 4 Assets /////////////////////////
-
-	done();
-} );
+    done();
+});

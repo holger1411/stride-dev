@@ -1,51 +1,120 @@
-# Stride. - A free and open source Bootstrap 5 website template
+# Stride - A Free Bootstrap 5 Website Template
 
-**Live Demo**: <a href="https://templatedeck.com/" target="_blank">templatedeck.com</a>
+**Live Demo**: [stride-html-template.netlify.app](https://stride-html-template.netlify.app/)
 
 ## What is Stride?
-Stride is a static HTML website template. Open sources and free to use. 
-It utilizes <a href="https://getbootstrap.com/" target="_blank">Bootstrap 5</a> and the the static site generator <a href="https://www.11ty.dev/" target="_blank">Eleventy</a> .
 
-## How to use it as beginner
-If you are familia with basic HTML but if you are not a web developer with advanced skills you can use Stride es well. Just use the `/public` folder of this repository. Change the content, add some of your images and transfer it to your webserver/webspace. Thats it
+Stride is a free, open-source static HTML website template built with [Bootstrap 5.3](https://getbootstrap.com/) and [Eleventy 3](https://www.11ty.dev/).
 
-## How to use Stride if you have some advanced web development knowledge
-Stride based on Bootstrap 5 and the static site generator Eleventy. It also comes with npm support for dependency management and Gulp as task runner.
-In this setup I used the template language Nunjucks (by Mozilla) but Eleventy also supports Liquid, Handelbars, Haml, Pug, Mustach to name a few. Vanilla JS, static HTML or even Markdown files are also possible. It also lets you mix differend template languages together.
-Eleventy also allows differend data types and ways to incorporate content during the deployment. You can use static and local content, compute content programatically, you can consume API´s, you can use the font matter format in files iteself, markdown content files etc.
-Basically Stride is a all in on boilerplate for static websites + an example of design and layout.
+## For Beginners
+
+If you're familiar with basic HTML but not advanced web development, you can still use Stride. Simply use the `/public` folder from this repository. Edit the content, add your images, and upload it to your web server. Done!
+
+## For Developers
+
+Stride is built on:
+
+- **Bootstrap 5.3** - CSS framework
+- **Eleventy 3** - Static site generator
+- **Nunjucks** - Template language (Eleventy also supports Liquid, Handlebars, Pug, and more)
+- **Gulp** - Task runner for SCSS compilation and optimization
+- **AOS** - Animate On Scroll library
+
+Eleventy allows you to use various data sources: static content, computed data, APIs, frontmatter, markdown files, and more.
 
 ## Requirements
-You need Node (at least v14+) on your computer. To check if you have node and what version run this command in your terminal:
-```
+
+- **Node.js 18+** (required for Eleventy 3)
+
+Check your Node version:
+
+```bash
 node --version
 ```
 
 ## Installation
-Download and extract the [latest release](https://github.com/holger1411/11straps/releases) or checkout the main branch of this repo.
-Fire up your terminal, go to the new folder and run:
-```
+
+1. Clone or download this repository
+2. Open your terminal and navigate to the project folder
+3. Run:
+
+```bash
 npm install
 ```
-Now you are good to go.
 
-## Build it for dev
-To build your static website for local development run:
-```
-npm run build-dev
-```
-This will build the static website into the `/dev` folder without all the minifiying and purging stuff (<- much faster and a more human friendly code output, but a much bigger package)
+## Development
 
-## Run in dev mode
-To run the build-dev task automatically on file changes run:
+### Quick Preview
+
+Start the Eleventy dev server:
+
+```bash
+npm run serve
 ```
+
+This starts a local server at `http://localhost:8080/` with live reload.
+
+### Full Development Mode
+
+For full development with SCSS compilation and BrowserSync:
+
+```bash
 npm run watch
 ```
-That will run a local server from `/dev` folder and connects browser sync to it. On changes within the `/src` folder it will run the `npm run build-dev` command automatically and will refresh your browser.
 
-## Build it for prod
-If you are done with your dev work and happy with it its time to deploy your static website into the wild wild west (www). To build your static website for a prod deployment run:
+This will:
+- Build the site to `/dev`
+- Compile SCSS to CSS
+- Start BrowserSync
+- Auto-rebuild on file changes
+
+### Development Build
+
+Build without minification (faster, readable output):
+
+```bash
+npm run build-dev
 ```
+
+Output is stored in the `/dev` folder.
+
+## Production Build
+
+Build optimized site for deployment:
+
+```bash
 npm run build
 ```
-That will output the full site, with purged and minified CSS and minified html. The output will be stored in the `/public` folder. That folder is what you want to deploy to your webserver / hosting provider.
+
+This will:
+- Compile and minify CSS
+- Purge unused CSS
+- Minify HTML
+- Convert images to WebP
+
+Output is stored in the `/public` folder - deploy this to your web server.
+
+## Project Structure
+
+```
+stride/
+├── src/                    # Source files
+│   ├── _data/              # Global data files
+│   ├── _includes/          # Layouts, snippets, components
+│   │   ├── layouts/        # Page layouts
+│   │   ├── snippets/       # Reusable partials
+│   │   └── code/           # UI components
+│   ├── scss/               # SCSS stylesheets
+│   ├── js/                 # JavaScript files
+│   ├── img/                # Images
+│   └── fonts/              # Web fonts
+├── dev/                    # Development build output
+├── public/                 # Production build output
+├── eleventy.config.js      # Eleventy configuration
+├── gulpfile.js             # Gulp tasks
+└── package.json            # Dependencies and scripts
+```
+
+## License
+
+MIT
