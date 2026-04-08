@@ -1,3 +1,10 @@
+<!-- templatedeck-backlink -->
+> 🎨 **STRIDE** is part of the [TemplateDeck](https://templatedeck.com) collection — handcrafted HTML and Astro templates for developers and designers.
+>
+> 📥 **[Download free on TemplateDeck](https://templatedeck.com/templates/stride)** · 🌐 **[Browse all templates](https://templatedeck.com)**
+
+---
+
 # Stride - A Free Bootstrap 5 Website Template
 
 **Live Demo**: [stride-html-template.netlify.app](https://stride-html-template.netlify.app/)
